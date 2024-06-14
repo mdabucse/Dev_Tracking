@@ -2,8 +2,9 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 # Load and prepare the data
 data = pd.read_csv('products.csv')
